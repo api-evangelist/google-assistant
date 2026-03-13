@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-schema/google-assistant.json",
+  "title": "Google Assistant API Schema",
+  "description": "JSON Schema for the Google Assistant API device model, device instance, and conversation objects.",
+  "type": "object",
+  "$defs": {
+    "DeviceModel": {
+      "type": "object",
+      "properties": {
+        "deviceModelId": {
+          "type": "string",
+          "description": "Unique identifier for the device model."
+        },
+        "projectId": {
+          "type": "string",
+          "description": "The Google Cloud project ID."
+        },
+        "name": {
+          "type": "string",
+          "description": "Display name of the device model."
+        },
+        "deviceType": {
+          "type": "string",
+          "enum": ["LIGHT", "SWITCH", "OUTLET", "SPEAKER", "TV", "AUTO"],
+          "description": "The type of device."
+        },
+        "traits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of supported device traits."
+        },
+        "manifest": {
+          "type": "object",
+          "properties": {
+            "manufacturer": {
+              "type": "string"
+            },
+            "productName": {
+              "type": "string"
+            },
+            "deviceDescription": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "DeviceInstance": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the device instance."
+        },
+        "deviceModelId": {
+          "type": "string",
+          "description": "The device model this instance belongs to."
+        },
+        "nickname": {
+          "type": "string",
+          "description": "Nickname for the device."
+        },
+        "clientType": {
+          "type": "string",
+          "description": "Client type of the device."
+        }
+      }
+    },
+    "AssistRequest": {
+      "type": "object",
+      "properties": {
+        "config": {
+          "type": "object",
+          "properties": {
+            "textInput": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "description": "Text query to the Assistant."
+                }
+              }
+            },
+            "audioInConfig": {
+              "type": "object",
+              "properties": {
+                "encoding": {
+                  "type": "string",
+                  "enum": ["LINEAR16", "FLAC"]
+                },
+                "sampleRateHertz": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "AssistResponse": {
+      "type": "object",
+      "properties": {
+        "dialogStateOut": {
+          "type": "object",
+          "properties": {
+            "supplementalDisplayText": {
+              "type": "string",
+              "description": "Text response from the Assistant."
+            },
+            "conversationState": {
+              "type": "string",
+              "description": "Opaque conversation state."
+            },
+            "microphoneMode": {
+              "type": "string",
+              "enum": ["CLOSE_MICROPHONE", "DIALOG_FOLLOW_ON"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

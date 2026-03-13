@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gassist": "https://developers.google.com/assistant/sdk/reference/rpc#",
+    "DeviceModel": {
+      "@id": "gassist:DeviceModel"
+    },
+    "DeviceInstance": {
+      "@id": "gassist:DeviceInstance"
+    },
+    "deviceModelId": {
+      "@id": "gassist:deviceModelId",
+      "@type": "xsd:string"
+    },
+    "deviceType": {
+      "@id": "gassist:deviceType",
+      "@type": "xsd:string"
+    },
+    "traits": {
+      "@id": "gassist:traits",
+      "@container": "@list"
+    },
+    "manufacturer": {
+      "@id": "https://schema.org/manufacturer",
+      "@type": "xsd:string"
+    },
+    "productName": {
+      "@id": "https://schema.org/name",
+      "@type": "xsd:string"
+    },
+    "textInput": {
+      "@id": "gassist:textInput",
+      "@type": "xsd:string"
+    },
+    "conversationState": {
+      "@id": "gassist:conversationState",
+      "@type": "xsd:string"
+    },
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+}
