@@ -1,5 +1,5 @@
 aid: google-assistant
-name: Google Assistant API
+name: Google Assistant
 description: >-
   The Google Assistant API enables developers to embed the Google Assistant into
   devices and applications. It provides conversational interfaces through gRPC
