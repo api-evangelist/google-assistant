@@ -24,8 +24,6 @@ servers:
 tags:
   - name: Assistant
     description: Interact with Google Assistant
-  - name: Actions
-    description: Manage conversational Actions
 paths:
   /v1alpha2/projects/{projectId}/deviceModels:
     get:

@@ -14,12 +14,12 @@ created: '2026-03-13'
 modified: '2026-03-16'
 specificationVersion: '0.19'
 tags:
-  - Voice Assistant
+  - Actions on Google
   - Conversational AI
   - Google Assistant
-  - Smart Home
-  - Actions on Google
   - Natural Language
+  - Smart Home
+  - Voice Assistant
 apis:
   - aid: google-assistant:google-assistant
     name: Google Assistant API
