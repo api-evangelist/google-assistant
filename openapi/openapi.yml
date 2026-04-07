@@ -30,7 +30,7 @@ paths:
   /v1alpha2/projects/{projectId}/deviceModels:
     get:
       operationId: listDeviceModels
-      summary: List Device Models
+      summary: Google Assistant List Device Models
       description: Lists all device models registered for the project.
       tags:
         - Assistant
@@ -50,7 +50,7 @@ paths:
                 $ref: '#/components/schemas/DeviceModelListResponse'
     post:
       operationId: createDeviceModel
-      summary: Create Device Model
+      summary: Google Assistant Create Device Model
       description: Registers a new device model.
       tags:
         - Assistant
@@ -76,7 +76,7 @@ paths:
   /v1alpha2/projects/{projectId}/deviceModels/{deviceModelId}:
     get:
       operationId: getDeviceModel
-      summary: Get Device Model
+      summary: Google Assistant Get Device Model
       description: Retrieves a specific device model.
       tags:
         - Assistant
@@ -100,7 +100,7 @@ paths:
                 $ref: '#/components/schemas/DeviceModel'
     delete:
       operationId: deleteDeviceModel
-      summary: Delete Device Model
+      summary: Google Assistant Delete Device Model
       description: Deletes a device model.
       tags:
         - Assistant
@@ -121,7 +121,7 @@ paths:
   /v1alpha2/projects/{projectId}/devices:
     get:
       operationId: listDeviceInstances
-      summary: List Device Instances
+      summary: Google Assistant List Device Instances
       description: Lists all device instances registered for the project.
       tags:
         - Assistant
@@ -140,7 +140,7 @@ paths:
                 $ref: '#/components/schemas/DeviceInstanceListResponse'
     post:
       operationId: createDeviceInstance
-      summary: Create Device Instance
+      summary: Google Assistant Create Device Instance
       description: Registers a new device instance.
       tags:
         - Assistant
