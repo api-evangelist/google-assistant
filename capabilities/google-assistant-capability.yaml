@@ -1,0 +1,314 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Assistant API
+  description: The Google Assistant API enables developers to embed the Google Assistant into devices and applications. It
+    provides a conversational interface through gRPC and REST endpoints, allowing applications to send text or audio queries
+    to the Assistant and receive responses. The Actions API allows developers to build conversational Actions that extend
+    the Assistant's capabilities with custom intents, scenes, and fulfillment logic.
+  tags:
+  - Google
+  - Assistant
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-assistant
+    baseUri: https://embeddedassistant.googleapis.com
+    description: Google Assistant API HTTP API.
+    resources:
+    - name: v1alpha2-projects-projectid-devicemodels
+      path: /v1alpha2/projects/{projectId}/deviceModels
+      operations:
+      - name: listdevicemodels
+        method: GET
+        description: Google Assistant List Device Models
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+          description: The Google Cloud project ID.
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createdevicemodel
+        method: POST
+        description: Google Assistant Create Device Model
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1alpha2-projects-projectid-devicemodels-devicem
+      path: /v1alpha2/projects/{projectId}/deviceModels/{deviceModelId}
+      operations:
+      - name: getdevicemodel
+        method: GET
+        description: Google Assistant Get Device Model
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: deviceModelId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletedevicemodel
+        method: DELETE
+        description: Google Assistant Delete Device Model
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: deviceModelId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1alpha2-projects-projectid-devices
+      path: /v1alpha2/projects/{projectId}/devices
+      operations:
+      - name: listdeviceinstances
+        method: GET
+        description: Google Assistant List Device Instances
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createdeviceinstance
+        method: POST
+        description: Google Assistant Create Device Instance
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-assistant-rest
+    description: REST adapter for Google Assistant API.
+    resources:
+    - path: /v1alpha2/projects/{projectId}/deviceModels
+      name: listdevicemodels
+      operations:
+      - method: GET
+        name: listdevicemodels
+        description: Google Assistant List Device Models
+        call: google-assistant.listdevicemodels
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1alpha2/projects/{projectId}/deviceModels
+      name: createdevicemodel
+      operations:
+      - method: POST
+        name: createdevicemodel
+        description: Google Assistant Create Device Model
+        call: google-assistant.createdevicemodel
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1alpha2/projects/{projectId}/deviceModels/{deviceModelId}
+      name: getdevicemodel
+      operations:
+      - method: GET
+        name: getdevicemodel
+        description: Google Assistant Get Device Model
+        call: google-assistant.getdevicemodel
+        with:
+          projectId: rest.projectId
+          deviceModelId: rest.deviceModelId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1alpha2/projects/{projectId}/deviceModels/{deviceModelId}
+      name: deletedevicemodel
+      operations:
+      - method: DELETE
+        name: deletedevicemodel
+        description: Google Assistant Delete Device Model
+        call: google-assistant.deletedevicemodel
+        with:
+          projectId: rest.projectId
+          deviceModelId: rest.deviceModelId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1alpha2/projects/{projectId}/devices
+      name: listdeviceinstances
+      operations:
+      - method: GET
+        name: listdeviceinstances
+        description: Google Assistant List Device Instances
+        call: google-assistant.listdeviceinstances
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1alpha2/projects/{projectId}/devices
+      name: createdeviceinstance
+      operations:
+      - method: POST
+        name: createdeviceinstance
+        description: Google Assistant Create Device Instance
+        call: google-assistant.createdeviceinstance
+        with:
+          projectId: rest.projectId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-assistant-mcp
+    transport: http
+    description: MCP adapter for Google Assistant API for AI agent use.
+    tools:
+    - name: listdevicemodels
+      description: Google Assistant List Device Models
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-assistant.listdevicemodels
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: The Google Cloud project ID.
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createdevicemodel
+      description: Google Assistant Create Device Model
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-assistant.createdevicemodel
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getdevicemodel
+      description: Google Assistant Get Device Model
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-assistant.getdevicemodel
+      with:
+        projectId: tools.projectId
+        deviceModelId: tools.deviceModelId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: deviceModelId
+        type: string
+        description: deviceModelId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletedevicemodel
+      description: Google Assistant Delete Device Model
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-assistant.deletedevicemodel
+      with:
+        projectId: tools.projectId
+        deviceModelId: tools.deviceModelId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      - name: deviceModelId
+        type: string
+        description: deviceModelId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listdeviceinstances
+      description: Google Assistant List Device Instances
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-assistant.listdeviceinstances
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createdeviceinstance
+      description: Google Assistant Create Device Instance
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-assistant.createdeviceinstance
+      with:
+        projectId: tools.projectId
+      inputParameters:
+      - name: projectId
+        type: string
+        description: projectId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
