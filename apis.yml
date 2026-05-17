@@ -37,7 +37,7 @@ apis:
       - type: JSONLD
         url: https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-ld/google-assistant.jsonld
 common:
-  - type: Getting Started
+  - type: GettingStarted
     url: https://developers.google.com/assistant/sdk/overview
   - type: Pricing
     url: https://developers.google.com/assistant
