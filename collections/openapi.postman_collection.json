@@ -1,0 +1,646 @@
+{
+  "item": [
+    {
+      "id": "78735332-6c07-4eba-9b81-ef45cf43e08a",
+      "name": "Assistant",
+      "description": {
+        "content": "Interact with Google Assistant",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fefedd67-860c-4a38-b8b9-1517076eef05",
+          "name": "Google Assistant List Device Models",
+          "request": {
+            "name": "Google Assistant List Device Models",
+            "description": {
+              "content": "Lists all device models registered for the project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1alpha2",
+                "projects",
+                ":projectId",
+                "deviceModels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) The Google Cloud project ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c3027838-04f8-483a-94fb-ce4adac06462",
+              "name": "Successful response with device models.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1alpha2",
+                    "projects",
+                    ":projectId",
+                    "deviceModels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) The Google Cloud project ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deviceModels\": [\n    {\n      \"deviceModelId\": \"string\",\n      \"projectId\": \"string\",\n      \"name\": \"string\",\n      \"deviceType\": \"SWITCH\",\n      \"traits\": [\n        \"string\",\n        \"string\"\n      ],\n      \"manifest\": {\n        \"manufacturer\": \"string\",\n        \"productName\": \"string\",\n        \"deviceDescription\": \"string\"\n      }\n    },\n    {\n      \"deviceModelId\": \"string\",\n      \"projectId\": \"string\",\n      \"name\": \"string\",\n      \"deviceType\": \"AUTO\",\n      \"traits\": [\n        \"string\",\n        \"string\"\n      ],\n      \"manifest\": {\n        \"manufacturer\": \"string\",\n        \"productName\": \"string\",\n        \"deviceDescription\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "199beebe-8314-40dd-9bfc-d1a24a37498e",
+          "name": "Google Assistant Create Device Model",
+          "request": {
+            "name": "Google Assistant Create Device Model",
+            "description": {
+              "content": "Registers a new device model.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1alpha2",
+                "projects",
+                ":projectId",
+                "deviceModels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deviceModelId\": \"<string>\",\n  \"projectId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"traits\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"manifest\": {\n    \"manufacturer\": \"<string>\",\n    \"productName\": \"<string>\",\n    \"deviceDescription\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f48aecb7-7e5f-4e2a-ad7a-40b2fd9d986a",
+              "name": "Device model created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1alpha2",
+                    "projects",
+                    ":projectId",
+                    "deviceModels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deviceModelId\": \"<string>\",\n  \"projectId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"deviceType\": \"<string>\",\n  \"traits\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"manifest\": {\n    \"manufacturer\": \"<string>\",\n    \"productName\": \"<string>\",\n    \"deviceDescription\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deviceModelId\": \"string\",\n  \"projectId\": \"string\",\n  \"name\": \"string\",\n  \"deviceType\": \"AUTO\",\n  \"traits\": [\n    \"string\",\n    \"string\"\n  ],\n  \"manifest\": {\n    \"manufacturer\": \"string\",\n    \"productName\": \"string\",\n    \"deviceDescription\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bfcae662-0321-4d8d-93bd-12157d11b2cf",
+          "name": "Google Assistant Get Device Model",
+          "request": {
+            "name": "Google Assistant Get Device Model",
+            "description": {
+              "content": "Retrieves a specific device model.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1alpha2",
+                "projects",
+                ":projectId",
+                "deviceModels",
+                ":deviceModelId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "deviceModelId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ea92cbe4-da71-41bd-be5c-9ecd6ad36a98",
+              "name": "Successful response with device model details.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1alpha2",
+                    "projects",
+                    ":projectId",
+                    "deviceModels",
+                    ":deviceModelId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "deviceModelId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deviceModelId\": \"string\",\n  \"projectId\": \"string\",\n  \"name\": \"string\",\n  \"deviceType\": \"AUTO\",\n  \"traits\": [\n    \"string\",\n    \"string\"\n  ],\n  \"manifest\": {\n    \"manufacturer\": \"string\",\n    \"productName\": \"string\",\n    \"deviceDescription\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e62856a2-2347-4c83-9b66-85ae8a190314",
+          "name": "Google Assistant Delete Device Model",
+          "request": {
+            "name": "Google Assistant Delete Device Model",
+            "description": {
+              "content": "Deletes a device model.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1alpha2",
+                "projects",
+                ":projectId",
+                "deviceModels",
+                ":deviceModelId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "deviceModelId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "156da186-3bf9-42d7-b361-42ba36f25b56",
+              "name": "Device model successfully deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1alpha2",
+                    "projects",
+                    ":projectId",
+                    "deviceModels",
+                    ":deviceModelId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "deviceModelId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7e812b2-2ebd-4f39-8594-ff7b86ef37e5",
+          "name": "Google Assistant List Device Instances",
+          "request": {
+            "name": "Google Assistant List Device Instances",
+            "description": {
+              "content": "Lists all device instances registered for the project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1alpha2",
+                "projects",
+                ":projectId",
+                "devices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "468a40b3-b7be-48b4-8824-1289dd79b80c",
+              "name": "Successful response with device instances.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1alpha2",
+                    "projects",
+                    ":projectId",
+                    "devices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"devices\": [\n    {\n      \"id\": \"string\",\n      \"deviceModelId\": \"string\",\n      \"nickname\": \"string\",\n      \"clientType\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"deviceModelId\": \"string\",\n      \"nickname\": \"string\",\n      \"clientType\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e662103e-7a7e-4bb1-8973-9ab6e3e608d8",
+          "name": "Google Assistant Create Device Instance",
+          "request": {
+            "name": "Google Assistant Create Device Instance",
+            "description": {
+              "content": "Registers a new device instance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1alpha2",
+                "projects",
+                ":projectId",
+                "devices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"deviceModelId\": \"<string>\",\n  \"nickname\": \"<string>\",\n  \"clientType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fb990c38-00dc-4d48-a2f1-c7cad8ae69a2",
+              "name": "Device instance created successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1alpha2",
+                    "projects",
+                    ":projectId",
+                    "devices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"deviceModelId\": \"<string>\",\n  \"nickname\": \"<string>\",\n  \"clientType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"deviceModelId\": \"string\",\n  \"nickname\": \"string\",\n  \"clientType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://embeddedassistant.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "31920c13-cc55-4df5-8183-0aad9d9ce27f",
+    "name": "Google Assistant API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google Assistant API enables developers to embed the Google Assistant into devices and applications. It provides a conversational interface through gRPC and REST endpoints, allowing applications to send text or audio queries to the Assistant and receive responses. The Actions API allows developers to build conversational Actions that extend the Assistant's capabilities with custom intents, scenes, and fulfillment logic.\n\nContact Support:\n Name: Google Assistant",
+      "type": "text/plain"
+    }
+  }
+}
