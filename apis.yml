@@ -36,6 +36,10 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-ld/google-assistant.jsonld
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-assistant-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-assistant-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/googlesamples
   - type: GettingStarted
