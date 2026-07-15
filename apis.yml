@@ -36,6 +36,8 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-ld/google-assistant.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-assistant-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-assistant-vulnerability-disclosure.yml
   - type: DomainSecurity
