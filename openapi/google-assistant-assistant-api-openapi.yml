@@ -1,13 +1,7 @@
 openapi: 3.1.0
 info:
   title: Google Assistant API
-  description: >-
-    The Google Assistant API enables developers to embed the Google Assistant into
-    devices and applications. It provides a conversational interface through gRPC
-    and REST endpoints, allowing applications to send text or audio queries to the
-    Assistant and receive responses. The Actions API allows developers to build
-    conversational Actions that extend the Assistant's capabilities with custom
-    intents, scenes, and fulfillment logic.
+  description: The Google Assistant API enables developers to embed the Google Assistant into devices and applications. It provides a conversational interface through gRPC and REST endpoints, allowing applications to send text or audio queries to the Assistant and receive responses. The Actions API allows developers to build conversational Actions that extend the Assistant's capabilities with custom intents, scenes, and fulfillment logic.
   version: 2.0.0
   contact:
     name: Google Assistant
@@ -15,15 +9,12 @@ info:
   license:
     name: Google APIs Terms of Service
     url: https://developers.google.com/terms
-externalDocs:
-  description: Google Assistant SDK Documentation
-  url: https://developers.google.com/assistant/sdk/overview
 servers:
-  - url: https://embeddedassistant.googleapis.com
-    description: Google Assistant Embedded API Server
+- url: https://embeddedassistant.googleapis.com
+  description: Google Assistant Embedded API Server
 tags:
-  - name: Assistant
-    description: Interact with Google Assistant
+- name: Assistant
+  description: Interact with Google Assistant
 paths:
   /v1alpha2/projects/{projectId}/deviceModels:
     get:
@@ -31,14 +22,14 @@ paths:
       summary: Google Assistant List Device Models
       description: Lists all device models registered for the project.
       tags:
-        - Assistant
+      - Assistant
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          description: The Google Cloud project ID.
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        description: The Google Cloud project ID.
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response with device models.
@@ -51,13 +42,13 @@ paths:
       summary: Google Assistant Create Device Model
       description: Registers a new device model.
       tags:
-        - Assistant
+      - Assistant
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -77,18 +68,18 @@ paths:
       summary: Google Assistant Get Device Model
       description: Retrieves a specific device model.
       tags:
-        - Assistant
+      - Assistant
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: deviceModelId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: deviceModelId
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response with device model details.
@@ -101,18 +92,18 @@ paths:
       summary: Google Assistant Delete Device Model
       description: Deletes a device model.
       tags:
-        - Assistant
+      - Assistant
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: deviceModelId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: deviceModelId
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '204':
           description: Device model successfully deleted.
@@ -122,13 +113,13 @@ paths:
       summary: Google Assistant List Device Instances
       description: Lists all device instances registered for the project.
       tags:
-        - Assistant
+      - Assistant
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response with device instances.
@@ -141,13 +132,13 @@ paths:
       summary: Google Assistant Create Device Instance
       description: Registers a new device instance.
       tags:
-        - Assistant
+      - Assistant
       parameters:
-        - name: projectId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -163,6 +154,13 @@ paths:
                 $ref: '#/components/schemas/DeviceInstance'
 components:
   schemas:
+    DeviceInstanceListResponse:
+      type: object
+      properties:
+        devices:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeviceInstance'
     DeviceModel:
       type: object
       properties:
@@ -179,12 +177,12 @@ components:
           type: string
           description: The type of device.
           enum:
-            - LIGHT
-            - SWITCH
-            - OUTLET
-            - SPEAKER
-            - TV
-            - AUTO
+          - LIGHT
+          - SWITCH
+          - OUTLET
+          - SPEAKER
+          - TV
+          - AUTO
         traits:
           type: array
           items:
@@ -199,13 +197,6 @@ components:
               type: string
             deviceDescription:
               type: string
-    DeviceModelListResponse:
-      type: object
-      properties:
-        deviceModels:
-          type: array
-          items:
-            $ref: '#/components/schemas/DeviceModel'
     DeviceInstance:
       type: object
       properties:
@@ -221,66 +212,13 @@ components:
         clientType:
           type: string
           description: The client type of the device.
-    DeviceInstanceListResponse:
+    DeviceModelListResponse:
       type: object
       properties:
-        devices:
+        deviceModels:
           type: array
           items:
-            $ref: '#/components/schemas/DeviceInstance'
-    AssistRequest:
-      type: object
-      description: A request to the Assistant conversational API.
-      properties:
-        config:
-          type: object
-          properties:
-            textInput:
-              type: object
-              properties:
-                text:
-                  type: string
-                  description: Text query to send to the Assistant.
-            audioInConfig:
-              type: object
-              properties:
-                encoding:
-                  type: string
-                  enum:
-                    - LINEAR16
-                    - FLAC
-                sampleRateHertz:
-                  type: integer
-            deviceConfig:
-              type: object
-              properties:
-                deviceId:
-                  type: string
-                deviceModelId:
-                  type: string
-    AssistResponse:
-      type: object
-      description: Response from the Assistant.
-      properties:
-        dialogStateOut:
-          type: object
-          properties:
-            supplementalDisplayText:
-              type: string
-              description: Text response from the Assistant.
-            conversationState:
-              type: string
-              description: Opaque state for continuing the conversation.
-            microphoneMode:
-              type: string
-              enum:
-                - CLOSE_MICROPHONE
-                - DIALOG_FOLLOW_ON
-        screenOut:
-          type: object
-          properties:
-            format:
-              type: string
-            data:
-              type: string
-              description: HTML content for screen display.
+            $ref: '#/components/schemas/DeviceModel'
+externalDocs:
+  description: Google Assistant SDK Documentation
+  url: https://developers.google.com/assistant/sdk/overview
