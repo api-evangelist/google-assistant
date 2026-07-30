@@ -6,7 +6,19 @@ description: >-
   The API supports device model and instance registration, custom Actions with intents and scenes, and the Actions SDK
   for building conversational experiences that extend the Assistant's capabilities.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-assistant.png
 url: https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -19,22 +31,22 @@ tags:
   - Smart Home
   - Voice Assistant
 apis:
-  - aid: google-assistant:google-assistant
-    name: Google Assistant API
-    description: >-
-      REST and gRPC API for embedding Google Assistant into devices and applications, managing device models and
-      instances, and building conversational Actions.
-    humanURL: https://developers.google.com/assistant
-    baseURL: https://embeddedassistant.googleapis.com
-    properties:
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/openapi/openapi.yml
-      - type: JSONSchema
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-schema/google-assistant.json
-      - type: JSONLD
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-ld/google-assistant.jsonld
+- aid: google-assistant:google-assistant-assistant-api
+  name: Google Assistant Assistant API
+  description: Interact with Google Assistant
+  humanURL: https://developers.google.com/assistant
+  baseURL: https://embeddedassistant.googleapis.com
+  tags:
+  - Assistant
+  properties:
+  - type: OpenAPI
+    url: openapi/google-assistant-assistant-api-openapi.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-schema/google-assistant.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-ld/google-assistant.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/google-assistant-agentic-access.yml
