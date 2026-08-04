@@ -1,0 +1,14 @@
+{
+  "provider": "google-assistant",
+  "sources": [
+    "google-assistant-assistant-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-assistant-assistant-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
