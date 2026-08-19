@@ -1,0 +1,145 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Assistant API",
+    "version": "2.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Assistant",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Assistant List Device Models",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://embeddedassistant.googleapis.com/v1alpha2/projects/:projectId/deviceModels",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path",
+                "description": "The Google Cloud project ID."
+              }
+            ]
+          },
+          "docs": "Lists all device models registered for the project."
+        },
+        {
+          "info": {
+            "name": "Google Assistant Create Device Model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://embeddedassistant.googleapis.com/v1alpha2/projects/:projectId/deviceModels",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Registers a new device model."
+        },
+        {
+          "info": {
+            "name": "Google Assistant Get Device Model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://embeddedassistant.googleapis.com/v1alpha2/projects/:projectId/deviceModels/:deviceModelId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "deviceModelId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a specific device model."
+        },
+        {
+          "info": {
+            "name": "Google Assistant Delete Device Model",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://embeddedassistant.googleapis.com/v1alpha2/projects/:projectId/deviceModels/:deviceModelId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "deviceModelId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a device model."
+        },
+        {
+          "info": {
+            "name": "Google Assistant List Device Instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://embeddedassistant.googleapis.com/v1alpha2/projects/:projectId/devices",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists all device instances registered for the project."
+        },
+        {
+          "info": {
+            "name": "Google Assistant Create Device Instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://embeddedassistant.googleapis.com/v1alpha2/projects/:projectId/devices",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Registers a new device instance."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
