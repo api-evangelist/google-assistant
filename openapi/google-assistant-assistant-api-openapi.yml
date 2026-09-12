@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Google Assistant API
   description: The Google Assistant API enables developers to embed the Google Assistant into devices and applications. It provides a conversational interface through gRPC and REST endpoints, allowing applications to send text or audio queries to the Assistant and receive responses. The Actions API allows developers to build conversational Actions that extend the Assistant's capabilities with custom intents, scenes, and fulfillment logic.
@@ -154,6 +154,21 @@ paths:
                 $ref: '#/components/schemas/DeviceInstance'
 components:
   schemas:
+    DeviceInstance:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the device instance.
+        deviceModelId:
+          type: string
+          description: The device model this instance belongs to.
+        nickname:
+          type: string
+          description: Nickname for the device.
+        clientType:
+          type: string
+          description: The client type of the device.
     DeviceInstanceListResponse:
       type: object
       properties:
@@ -197,21 +212,6 @@ components:
               type: string
             deviceDescription:
               type: string
-    DeviceInstance:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Unique identifier for the device instance.
-        deviceModelId:
-          type: string
-          description: The device model this instance belongs to.
-        nickname:
-          type: string
-          description: Nickname for the device.
-        clientType:
-          type: string
-          description: The client type of the device.
     DeviceModelListResponse:
       type: object
       properties:
