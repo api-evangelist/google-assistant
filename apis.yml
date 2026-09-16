@@ -1,10 +1,10 @@
 aid: google-assistant
 name: Google Assistant
-description: >-
-  The Google Assistant API enables developers to embed the Google Assistant into devices and applications. It provides
-  conversational interfaces through gRPC and REST endpoints for sending text or audio queries and receiving responses.
-  The API supports device model and instance registration, custom Actions with intents and scenes, and the Actions SDK
-  for building conversational experiences that extend the Assistant's capabilities.
+description: The Google Assistant API enables developers to embed the Google Assistant into devices and
+  applications. It provides conversational interfaces through gRPC and REST endpoints for sending text
+  or audio queries and receiving responses. The API supports device model and instance registration, custom
+  Actions with intents and scenes, and the Actions SDK for building conversational experiences that extend
+  the Assistant's capabilities.
 type: Index
 deliveryModel:
   model: saas
@@ -33,25 +33,25 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-assistant.png
 url: https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 tags:
-  - Actions on Google
-  - Conversational AI
-  - Google Assistant
-  - Natural-Language
-  - Smart Home
-  - Voice Assistant
+- Actions on Google
+- Conversational AI
+- Google Assistant
+- Natural-Language
+- Smart Home
+- Voice Assistant
 tags_raw:
-  - Actions on Google
-  - Conversational AI
-  - Google Assistant
-  - Natural Language
-  - Smart Home
-  - Voice Assistant
+- Actions on Google
+- Conversational AI
+- Google Assistant
+- Natural Language
+- Smart Home
+- Voice Assistant
 apis:
 - aid: google-assistant:google-assistant-assistant-api
-  name: Google Assistant Assistant API
+  name: Google Assistant API
   description: Interact with Google Assistant
   humanURL: https://developers.google.com/assistant
   baseURL: https://embeddedassistant.googleapis.com
@@ -61,30 +61,28 @@ apis:
   - type: OpenAPI
     url: openapi/google-assistant-assistant-api-openapi.yml
   - type: JSONSchema
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-schema/google-assistant.json
-  - type: JSONLD
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-ld/google-assistant.jsonld
-common:
-  - type: Website
-    url: https://www.google.com/
-  - type: AgenticAccess
-    url: agentic-access/google-assistant-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/google-assistant-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/google-assistant-domain-security.yml
-  - type: GitHubOrganization
-    url: https://github.com/googlesamples
-  - type: GettingStarted
-    url: https://developers.google.com/assistant/sdk/overview
-  - type: Pricing
-    url: https://developers.google.com/assistant
+    url: https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-schema/google-assistant.json
   - type: JSONLD
     url: https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-ld/google-assistant.jsonld
+common:
+- type: Website
+  url: https://www.google.com/
+- type: AgenticAccess
+  url: agentic-access/google-assistant-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/google-assistant-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/google-assistant-domain-security.yml
+- type: GitHubOrganization
+  url: https://github.com/googlesamples
+- type: GettingStarted
+  url: https://developers.google.com/assistant/sdk/overview
+- type: Pricing
+  url: https://developers.google.com/assistant
+- type: JSONLD
+  url: https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-ld/google-assistant.jsonld
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 x-parent: google
 x-relationship: product
