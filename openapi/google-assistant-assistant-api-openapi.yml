@@ -169,13 +169,6 @@ components:
         clientType:
           type: string
           description: The client type of the device.
-    DeviceInstanceListResponse:
-      type: object
-      properties:
-        devices:
-          type: array
-          items:
-            $ref: '#/components/schemas/DeviceInstance'
     DeviceModel:
       type: object
       properties:
@@ -212,6 +205,13 @@ components:
               type: string
             deviceDescription:
               type: string
+    DeviceInstanceListResponse:
+      type: object
+      properties:
+        devices:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeviceInstance'
     DeviceModelListResponse:
       type: object
       properties:
