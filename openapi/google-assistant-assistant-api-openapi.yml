@@ -154,21 +154,13 @@ paths:
                 $ref: '#/components/schemas/DeviceInstance'
 components:
   schemas:
-    DeviceInstance:
+    DeviceInstanceListResponse:
       type: object
       properties:
-        id:
-          type: string
-          description: Unique identifier for the device instance.
-        deviceModelId:
-          type: string
-          description: The device model this instance belongs to.
-        nickname:
-          type: string
-          description: Nickname for the device.
-        clientType:
-          type: string
-          description: The client type of the device.
+        devices:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeviceInstance'
     DeviceModel:
       type: object
       properties:
@@ -205,6 +197,21 @@ components:
               type: string
             deviceDescription:
               type: string
+    DeviceInstance:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the device instance.
+        deviceModelId:
+          type: string
+          description: The device model this instance belongs to.
+        nickname:
+          type: string
+          description: Nickname for the device.
+        clientType:
+          type: string
+          description: The client type of the device.
     DeviceModelListResponse:
       type: object
       properties:
@@ -212,13 +219,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/DeviceModel'
-    DeviceInstanceListResponse:
-      type: object
-      properties:
-        devices:
-          type: array
-          items:
-            $ref: '#/components/schemas/DeviceInstance'
 externalDocs:
   description: Google Assistant SDK Documentation
   url: https://developers.google.com/assistant/sdk/overview
