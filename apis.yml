@@ -65,6 +65,12 @@ apis:
   - type: JSONLD
     url: https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-ld/google-assistant.jsonld
 common:
+- type: Plans
+  url: plans/google-assistant-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/google-assistant-rate-limits.yml
+- type: FinOps
+  url: finops/google-assistant-finops.yml
 - type: Website
   url: https://www.google.com/
 - type: AgenticAccess
