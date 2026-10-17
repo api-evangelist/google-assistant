@@ -154,13 +154,13 @@ paths:
                 $ref: '#/components/schemas/DeviceInstance'
 components:
   schemas:
-    DeviceInstanceListResponse:
+    DeviceModelListResponse:
       type: object
       properties:
-        devices:
+        deviceModels:
           type: array
           items:
-            $ref: '#/components/schemas/DeviceInstance'
+            $ref: '#/components/schemas/DeviceModel'
     DeviceModel:
       type: object
       properties:
@@ -212,13 +212,13 @@ components:
         clientType:
           type: string
           description: The client type of the device.
-    DeviceModelListResponse:
+    DeviceInstanceListResponse:
       type: object
       properties:
-        deviceModels:
+        devices:
           type: array
           items:
-            $ref: '#/components/schemas/DeviceModel'
+            $ref: '#/components/schemas/DeviceInstance'
 externalDocs:
   description: Google Assistant SDK Documentation
   url: https://developers.google.com/assistant/sdk/overview
