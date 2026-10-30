@@ -1,4 +1,4 @@
-# Google Assistant (google-assistant)
+# Google Assistant
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,51 +66,134 @@
 
 The Google Assistant API enables developers to embed the Google Assistant into devices and applications. It provides conversational interfaces through gRPC and REST endpoints for sending text or audio queries and receiving responses. The API supports device model and instance registration, custom Actions with intents and scenes, and the Actions SDK for building conversational experiences that extend the Assistant's capabilities.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/apis.yml)
+**Areas:** Actions on Google · Conversational AI · Google Assistant · Natural-Language · Smart Home · Voice Assistant
 
-## Scope
+## Google Assistant on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Assistant is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-assistant/](https://apis.io/providers/google-assistant/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
-- Actions on Google
-- Conversational AI
-- Google Assistant
-- Natural Language
-- Smart Home
-- Voice Assistant
+- [Google Assistant API](https://apis.io/apis/google-assistant/google-assistant-assistant-api/) — Interact with Google Assistant
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Google Assistant API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-REST and gRPC API for embedding Google Assistant into devices and applications, managing device models and instances, and building conversational Actions.
+- [Google Assistant Agentic Access](https://apis.io/agentic-access/google-assistant/google-assistant-agentic-access/)
 
-- **Human URL:** [https://developers.google.com/assistant](https://developers.google.com/assistant)
-- **Base URL:** `https://embeddedassistant.googleapis.com`
+#### JSON Schema (1)
 
-#### Properties
+The data models the API reads and writes.
 
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-schema/google-assistant.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-ld/google-assistant.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Google Assistant API Schema](https://apis.io/schemas/google-assistant/google-assistant/)
 
-## Common Properties
+#### JSON-LD (1)
 
-- [GitHub Organization](https://github.com/googlesamples)
-- [Getting Started](https://developers.google.com/assistant/sdk/overview)
+Linked-data contexts for the provider's vocabulary.
+
+- [Google Assistant Context](https://apis.io/jsonld/google-assistant/google-assistant/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Google Assistant API](https://apis.io/collections/google-assistant/open-google-assistant-assistant-api/)
+- [Google Assistant API](https://apis.io/collections/google-assistant/open-openapi/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Assistant — jsonschema rules](https://apis.io/rules/google-assistant/google-assistant-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Assistant Domain Security](https://apis.io/security/google-assistant/google-assistant-domain-security/)
+- [Google Assistant Vulnerability Disclosure](https://apis.io/security/google-assistant/google-assistant-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Assistant Plans Pricing](https://apis.io/plans/google-assistant/google-assistant-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Assistant Rate Limits](https://apis.io/rate-limits/google-assistant/google-assistant-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Assistant Finops](https://apis.io/finops/google-assistant/google-assistant-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
+- [Getting started](https://developers.google.com/assistant/sdk/overview)
 - [Pricing](https://developers.google.com/assistant)
-- [JSON-LD](https://raw.githubusercontent.com/api-evangelist/google-assistant/refs/heads/main/json-ld/google-assistant.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [GitHub](https://github.com/googlesamples)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 27.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 51.8 |
+| Contract governance | 9.8 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 18.4 |
+
+**Agent readiness 15.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-assistant/](https://apis.io/providers/google-assistant/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Assistant: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-assistant/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
